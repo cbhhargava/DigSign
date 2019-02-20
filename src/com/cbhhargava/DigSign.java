@@ -63,8 +63,6 @@ public class DigSign {
     public boolean verifySign(BigInteger signedMessage, BigInteger msg){
         BigInteger a = signedMessage.multiply(privateKey).mod(safePrime);
         BigInteger b = generator.modPow(msg, safePrime);
-        System.out.println(a);
-        System.out.println(b);
         return a.equals(b);
     }
 }
